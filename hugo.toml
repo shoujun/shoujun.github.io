@@ -1,0 +1,13 @@
+baseURL = 'https://shoujun.github.io/'
+locale = 'en-us'
+title = 'Shoujun KB'
+theme = 'PaperMod'
+
+[params]
+  env = 'production'
+  description = 'DevOps, Java, and AI/SDLC knowledge base'
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
