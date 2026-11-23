@@ -1,6 +1,6 @@
 baseURL = 'https://shoujun.github.io/'
 locale = 'en-us'
-title = 'Shoujun KB'
+title = 'shoujun KB'
 theme = 'PaperMod'
 
 [params]
