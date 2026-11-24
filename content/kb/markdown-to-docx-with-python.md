@@ -3,7 +3,7 @@ title: "How to convert Markdown to Word (.docx) without templates"
 date: 2026-11-23
 draft: false
 tags: ["skills", "doc-conversion", "python", "tooling"]
-description: "Convert markdown runbooks, notes and docs to native Word .docx using python-docx via the simple-md-docx-converter agent skill — headings, tables, task lists, code fences, mermaid diagrams and optional corporate templates."
+description: "Convert markdown runbooks, notes and docs to native Word .docx using python-docx via the skill-md-docx-converter agent skill — headings, tables, task lists, code fences, mermaid diagrams and optional corporate templates."
 ---
 
 ## Problem
@@ -15,10 +15,10 @@ just want a Word file.
 
 ## Solution
 
-Use the released agent skill **`simple-md-docx-converter`**
-(`~/skills/releases/simple-md-docx-converter`, also linked from
-`~/skills/assets/skills/`). It converts any well-formed `.md` to native
-Word constructs with `python-docx`:
+Use the agent skill **simple-md-docx-converter** —
+repo: <https://gitlab.com/shoujunni/skill-md-docx-converter>.
+It converts any well-formed `.md` to native Word constructs with
+`python-docx`:
 
 - Headings, paragraphs, lists (incl. task lists), tables, code fences,
   blockquotes, strikethrough, horizontal rules
@@ -33,15 +33,17 @@ Word constructs with `python-docx`:
 ## Quick start
 
 ```bash
+git clone https://gitlab.com/shoujunni/skill-md-docx-converter.git
+cd skill-md-docx-converter
+
 # One-time: create the venv with python-docx
-~/skills/releases/simple-md-docx-converter/scripts/setup.sh
+./scripts/setup.sh
 
 # Convert (writes input.docx next to input.md)
-~/skills/releases/simple-md-docx-converter/.venv/bin/python \
-  ~/skills/releases/simple-md-docx-converter/scripts/convert_md_to_docx.py input.md
+.venv/bin/python scripts/convert_md_to_docx.py input.md
 
 # Merge several files, branded output
-convert_md_to_docx.py a.md b.md -o merged.docx \
+.venv/bin/python scripts/convert_md_to_docx.py a.md b.md -o merged.docx \
   --template corporate-report --set title="Quarterly Report"
 ```
 
@@ -59,9 +61,3 @@ Useful flags: `--code-theme <pygments-name>`, `--code-font <name>`,
   open; that is expected.
 - Verify output with `scripts/verify_docx_placeholders.py out.docx` —
   confirms no unresolved `{{tokens}}` and sane file size (≥ 20 KB).
-
-## Related
-
-- Skill source: `~/skills/releases/simple-md-docx-converter` (graduated,
-  standalone repo); dev copy at `~/skills/assets/skills/simple-md-docx-converter`
-- Stack membership: `doc-conversion.txt` in `~/skills/assets/stacks/`
