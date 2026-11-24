@@ -2,6 +2,7 @@
 title: "How to convert Markdown to Word (.docx) without templates"
 date: 2026-11-23
 draft: false
+aliases: ["/kb/markdown-to-docx-with-python/"]
 tags: ["skills", "doc-conversion", "python", "tooling"]
 description: "Convert markdown runbooks, notes and docs to native Word .docx using python-docx via the skill-md-docx-converter agent skill — headings, tables, task lists, code fences, mermaid diagrams and optional corporate templates."
 ---
