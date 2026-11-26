@@ -1,4 +1,4 @@
-baseURL = 'https://shoujun.github.io/'
+baseURL = 'https://kb.shoujun.dev/'
 locale = 'en-us'
 title = 'shoujun KB'
 theme = 'PaperMod'
